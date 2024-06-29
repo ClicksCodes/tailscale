@@ -66,7 +66,7 @@ func main() {
 		// will be empty because the tailnet of the sharee is not exposed.
 		var tailnet string
 
-		if !info.Node.Hostinfo.ShareeNode() {
+		if !info.Node.Hostinfo.ShareeNode() && info.Node.Name != info.Node.ComputedName {
 			var ok bool
 			_, tailnet, ok = strings.Cut(info.Node.Name, info.Node.ComputedName+".")
 			if !ok {

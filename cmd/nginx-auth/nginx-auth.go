@@ -71,7 +71,7 @@ func main() {
 			_, tailnet, ok = strings.Cut(info.Node.Name, info.Node.ComputedName+".")
 			if !ok {
 				w.WriteHeader(http.StatusUnauthorized)
-				log.Printf("can't extract tailnet name from hostname %q", info.Node.Name)
+				log.Printf("can't extract tailnet name from hostname %q and ComputedName %q", info.Node.Name, info.Node.ComputedName+".")
 				return
 			}
 			tailnet = strings.TrimSuffix(tailnet, ".beta.tailscale.net")
